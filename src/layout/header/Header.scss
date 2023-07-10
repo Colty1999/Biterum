@@ -1,13 +1,23 @@
+@import "../Consts.scss";
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 2rem;
-    background-color: var(--secondaryColor);
+    padding: 1rem 10%;
+    background: transparent;
     color: var(--secondaryTextColor);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+
+    .logo {
+        font-size: 1.5rem;
+        color: var(--primaryTextColor);
+        text-decoration: none;
+        font-weight: 900;
+    }
+
 }

@@ -1,5 +1,6 @@
-import { FormControlLabel, FormGroup, styled, Switch } from '@mui/material';
+import { FormControlLabel, FormGroup, styled, Switch, ThemeProvider } from '@mui/material';
 import { useEffect, useState } from 'react'
+import { MUItheme } from '../../assets/Consts';
 
 
 export default function DarkMode() {
@@ -30,15 +31,22 @@ export default function DarkMode() {
         }
     }, []);
 
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', 'light');
+        setTheme("light");
+    }, []);
+
     return (
-        <FormGroup>
-            <FormControlLabel
-                control={<MaterialUISwitch sx={{ m: 1 }} />}
-                label="Dark mode switch"
-                onChange={toggleTheme}
-                checked={theme === "dark"}
-            />
-        </FormGroup>
+        <ThemeProvider theme={MUItheme}>
+            <FormGroup>
+                {/* <FormControlLabel
+                    control={<MaterialUISwitch sx={{ m: 1 }} />}
+                    label="Dark mode switch"
+                    onChange={toggleTheme}
+                    checked={theme === "dark"}
+                /> */}
+            </FormGroup>
+        </ThemeProvider>
     )
 }
 

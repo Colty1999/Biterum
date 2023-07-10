@@ -11,12 +11,28 @@
   font-size: 1.2rem;
   line-height: 1.5;
   letter-spacing: -0.01rem;
+  -webkit-font-smoothing: antialiased;
   // min-height: 100vh;
 }
 
 body {
   background: var(--primaryColor);
   color: var(--primaryTextColor);
+}
+
+a {
+  font-size: 1rem;
+  color: var(--linkColor);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1rem;
+  transition: color 0.3s ease-in-out;
+
+  &:hover,
+  &.active {
+    color: var(--linkHoverColor);
+  }
+
 }
 
 h1 {
