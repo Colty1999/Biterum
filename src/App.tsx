@@ -1,14 +1,20 @@
 import react from 'react'
 import './App.scss'
 import DarkMode from './modules/DarkMode';
-import { Container } from '@mui/material';
+import { Container, ThemeProvider, createTheme } from '@mui/material';
 
-function App() {
+export default function App() {
   return (
-    <Container>
-      <DarkMode />
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <DarkMode />
+      </Container>
+    </ThemeProvider>
   )
 }
 
-export default App
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Montserrat',
+  }
+});
