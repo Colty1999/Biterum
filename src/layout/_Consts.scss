@@ -1,0 +1,15 @@
+//light theme
+[data-theme="light"] {
+    --primaryColor: #fff;
+    --secondaryColor: #242424;
+    --primaryTextColor: #242424;
+    --secondaryTextColor: #fff;
+}
+
+//dark theme
+[data-theme="dark"] {
+    --primaryColor: #242424;
+    --secondaryColor: #fff;
+    --primaryTextColor: #fff;
+    --secondaryTextColor: #242424;
+}

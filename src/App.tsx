@@ -1,12 +1,13 @@
-import react from 'react'
 import './App.scss'
-import DarkMode from './modules/DarkMode';
+import DarkMode from './modules/darkmode/DarkMode';
 import { Container, ThemeProvider, createTheme } from '@mui/material';
+import Header from './layout/header/Header';
 
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
+        <Header />
         <DarkMode />
       </Container>
     </ThemeProvider>
@@ -15,6 +16,6 @@ export default function App() {
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Montserrat',
+    fontFamily: ['Poppins', 'sans-serif'].join(','),
   }
 });
