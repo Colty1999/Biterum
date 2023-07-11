@@ -5,13 +5,14 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 5rem;
     padding: 1rem 10%;
     background: transparent;
     color: var(--secondaryTextColor);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 999;
 
     .logo {
         font-size: 2rem;
@@ -21,6 +22,9 @@
     }
 
     .navbar {
+        display: flex;
+        align-items: center;
+
         a {
             font-size: 1.2rem;
             margin-left: 1rem;

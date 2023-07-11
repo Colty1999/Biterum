@@ -1,6 +1,7 @@
 //light theme
 [data-theme="light"] {
-    --primaryColor: #F9F7F7;
+    // F9F7F7
+    --primaryColor: #FAF0E4;
     --secondaryColor: #DBE2EF;
     --tertiaryColor: #3F72AF;
     --quaternaryColor: #112D4E;
@@ -8,7 +9,7 @@
     --primaryTextColor: #242424;
     --secondaryTextColor: #fff;
     --tertiaryTextColor: #3F72AF;
-    --quaternaryTextColor: #112D4E;
+    --quaternaryTextColor: #184272;
 
     --linkColor: #3F72AF;
     --linkHoverColor: #112D4E;
@@ -20,13 +21,15 @@
 //dark theme
 [data-theme="dark"] {
     --primaryColor: #242424;
-    --secondaryColor: #fff;
+    --secondaryColor: #F9F7F7;
     --tertiaryColor: #EF7C8E;
-    --quaternaryColor: #B6E2D3;
+    --quaternaryColor: #df304a;
 
-    --primaryTextColor: #fff;
+    --primaryTextColor: #F9F7F7;
     --secondaryTextColor: #242424;
+    --tertiaryTextColor: #EF7C8E;
+    --quaternaryTextColor: #df304a;
 
-    --linkColor: #D8A7B1;
-    --linkHoverColor: #EF7C8E;
+    --linkColor: #EF7C8E;
+    --linkHoverColor: #df304a;
 }

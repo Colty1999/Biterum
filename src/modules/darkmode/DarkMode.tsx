@@ -39,12 +39,12 @@ export default function DarkMode() {
     return (
         <ThemeProvider theme={MUItheme}>
             <FormGroup>
-                {/* <FormControlLabel
+                <FormControlLabel
                     control={<MaterialUISwitch sx={{ m: 1 }} />}
-                    label="Dark mode switch"
+                    // label="Dark mode switch"
                     onChange={toggleTheme}
                     checked={theme === "dark"}
-                /> */}
+                />
             </FormGroup>
         </ThemeProvider>
     )

@@ -1,3 +1,4 @@
+import DarkMode from '../../modules/darkmode/DarkMode'
 import './Header.scss'
 
 export default function Header() {
@@ -9,6 +10,7 @@ export default function Header() {
                 <a href="#" >Graphs</a>
                 <a href="#" >Tables</a>
                 <a href="#" >About</a>
+                <a><DarkMode /></a>
             </nav>
         </header>
     )
