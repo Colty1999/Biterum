@@ -1,22 +1,27 @@
 //light theme
 [data-theme="light"] {
-    --primaryColor: #FAE8E0;
-    --secondaryColor: #D8A7B1;
-    --triaryColor: #EF7C8E;
-    --quaternaryColor: #B6E2D3;
+    --primaryColor: #F9F7F7;
+    --secondaryColor: #DBE2EF;
+    --tertiaryColor: #3F72AF;
+    --quaternaryColor: #112D4E;
 
     --primaryTextColor: #242424;
-    --secondaryTextColor: #B6E2D3;
+    --secondaryTextColor: #fff;
+    --tertiaryTextColor: #3F72AF;
+    --quaternaryTextColor: #112D4E;
 
-    --linkColor: #D8A7B1;
-    --linkHoverColor: #EF7C8E;
+    --linkColor: #3F72AF;
+    --linkHoverColor: #112D4E;
+
+    // --linkColor: #D8A7B1;
+    // --linkHoverColor: #EF7C8E;
 }
 
 //dark theme
 [data-theme="dark"] {
     --primaryColor: #242424;
     --secondaryColor: #fff;
-    --triaryColor: #EF7C8E;
+    --tertiaryColor: #EF7C8E;
     --quaternaryColor: #B6E2D3;
 
     --primaryTextColor: #fff;

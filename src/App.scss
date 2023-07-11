@@ -8,10 +8,11 @@
 
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5;
   letter-spacing: -0.01rem;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   // min-height: 100vh;
 }
 
@@ -25,7 +26,6 @@ a {
   color: var(--linkColor);
   text-decoration: none;
   font-weight: 500;
-  margin-left: 1rem;
   transition: color 0.3s ease-in-out;
 
   &:hover,
