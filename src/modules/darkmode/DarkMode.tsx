@@ -5,35 +5,46 @@ import { MUItheme } from '../../assets/Consts';
 
 export default function DarkMode() {
 
-    const [theme, setTheme] = useState<string>("light")
+    const [theme, setTheme] = useState<string>((localStorage.getItem("themeKey") ?? document.documentElement.getAttribute('data-theme')) ?? 'light')
     const toggleTheme = () => {
         switch (theme) {
             case "light":
                 document.documentElement.setAttribute('data-theme', 'dark');
                 setTheme("dark");
+                localStorage.setItem("themeKey", "dark");
                 break;
             case "dark":
                 document.documentElement.setAttribute('data-theme', 'light');
                 setTheme("light");
+                localStorage.setItem("themeKey", "light");
                 break;
             default:
                 break;
         }
     }
     useEffect(() => {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            setTheme("dark");
+        switch (true) {
+            case localStorage.getItem("themeKey") === "dark":
+                document.documentElement.setAttribute('data-theme', 'dark');
+                setTheme("dark");
+                localStorage.setItem("themeKey", "dark");
+                break;
+            case localStorage.getItem("themeKey") === "light":
+                document.documentElement.setAttribute('data-theme', 'light');
+                setTheme("light");
+                localStorage.setItem("themeKey", "light");
+                break;
+            case window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches:
+                document.documentElement.setAttribute('data-theme', 'dark');
+                setTheme("dark");
+                localStorage.setItem("themeKey", "dark");
+                break;
+            default:
+                document.documentElement.setAttribute('data-theme', 'light');
+                setTheme("light");
+                localStorage.setItem("themeKey", "light");
+                break;
         }
-        else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            setTheme("light");
-        }
-    }, []);
-
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', 'light');
-        setTheme("light");
     }, []);
 
     return (
@@ -41,7 +52,7 @@ export default function DarkMode() {
             <FormGroup>
                 <FormControlLabel
                     control={<MaterialUISwitch sx={{ m: 1 }} />}
-                    // label="Dark mode switch"
+                    label=""
                     onChange={toggleTheme}
                     checked={theme === "dark"}
                 />

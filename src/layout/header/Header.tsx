@@ -4,7 +4,7 @@ import './Header.scss'
 export default function Header() {
     return (
         <header className="header-container">
-            <a href="#" className="logo">Biterum</a>
+            <a href="#" className="logo">Biterum.</a>
             <nav className="navbar">
                 <a href="#" className="active">Home</a>
                 <a href="#" >Graphs</a>
