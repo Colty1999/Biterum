@@ -20,7 +20,7 @@
         text-decoration: none;
         z-index: 1;
         overflow: hidden;
-        transition: .5s ease-in-out;
+        transition: .3s ease-in-out;
 
         &:hover {
             color: var(--secondaryColor);
@@ -36,7 +36,7 @@
             height: 100%;
             background: var(--tertiaryColor);
             z-index: -1;
-            transition: .5s ease-in-out;
+            transition: .3s ease-in-out;
         }
 
         &:hover::before {

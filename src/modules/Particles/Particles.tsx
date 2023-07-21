@@ -1,9 +1,19 @@
-import { useCallback } from 'react';
+import { useCallback, useContext, useEffect, useState} from 'react';
 import Particles from 'react-particles';
 import { loadSlim } from 'tsparticles-slim';
 import { Engine } from 'tsparticles-engine';
+import './Particles.scss'
+import { Context } from '../../assets/Consts';
+
 
 export default function ParticlesBackground() {
+
+    let {theme} = useContext(Context);;
+    const [color, setColor] = useState<string>(theme === "dark" ? "#ffffff" : "#000000");
+
+    useEffect(() => {
+        setColor(theme === "dark" ? "#ffffff" : "#000000");
+    }, [theme]);
 
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
@@ -39,17 +49,17 @@ export default function ParticlesBackground() {
                   quantity: 4,
                 },
                 repulse: {
-                  distance: 200,
+                  distance: 500,
                   duration: 0.4,
                 },
               },
             },
             particles: {
               color: {
-                value: "#ffffff",
+                value: color,
               },
               links: {
-                color: "#ffffff",
+                color: color,
                 distance: 150,
                 enable: true,
                 opacity: 0.5,
@@ -82,8 +92,13 @@ export default function ParticlesBackground() {
                 value: { min: 1, max: 5 },
               },
             },
+            polygon: { 
+                enable: true,
+                url: "/vite.svg",
+            },
             detectRetina: true,
           }}
         />
     )
 }
+

@@ -1,11 +1,12 @@
 import { FormControlLabel, FormGroup, styled, Switch, ThemeProvider } from '@mui/material';
-import { useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { MUItheme } from '../../assets/Consts';
-
+import { Context } from '../../assets/Consts';
 
 export default function DarkMode() {
 
-    const [theme, setTheme] = useState<string>((localStorage.getItem("themeKey") ?? document.documentElement.getAttribute('data-theme')) ?? 'light')
+    let {theme, setTheme} = useContext(Context);
+    // const [theme, setTheme] = useState<string>((localStorage.getItem("themeKey") ?? document.documentElement.getAttribute('data-theme')) ?? 'light')
     const toggleTheme = () => {
         switch (theme) {
             case "light":
