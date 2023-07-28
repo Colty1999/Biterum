@@ -16,14 +16,9 @@ export default function ParticlesBackground() {
     useEffect(() => {
         setColor(theme === "dark" ? "#ffffff" : "#000000");
     }, [theme]);
-    
-
-    // const particlesInit = useCallback(async (engine: Engine) => {
-    //     await loadSlim(engine);
-    //   }, []);
 
     const options = {
-      name: "Polygon Mask",
+      name: "Etherum Mask",
       interactivity: {
         events: {
           onClick: {
@@ -92,8 +87,8 @@ export default function ParticlesBackground() {
           consent: false,
           distance: 30,
           enable: true,
-          opacity: 0.4,
-          width: 1
+          opacity: 0.8,
+          width: 2
         },
         move: {
           enable: true,
@@ -102,7 +97,7 @@ export default function ParticlesBackground() {
         },
         number: {
           limit: 0,
-          value: 200
+          value: 100
         },
         opacity: {
           animation: {
@@ -111,31 +106,35 @@ export default function ParticlesBackground() {
             sync: false
           },
           value: {
-            min: 0.05,
-            max: 0.4
+            min: 0.1,
+            max: 0.5
           }
         },
         shape: {
           type: "circle"
         },
         size: {
-          value: 1
+          value: 2
         }
       },
       polygon: {
         draw: {
           enable: true,
           lineColor: `${color}60`,
-          lineWidth: 1
+          lineWidth: 2
         },
         enable: true,
         move: {
-          radius: 10
+          radius: 100
+        },
+        position: {
+          x: 125,
+          y: 180
         },
         inline: {
           arrangement: "equidistant"
         },
-        scale: 1,
+        scale: 3,
         type: "inline",
         url: "/path.svg"
       },
@@ -148,83 +147,7 @@ export default function ParticlesBackground() {
             await loadFull(engine);
             await loadPolygonMaskPlugin(engine);
           }}
-          // init={particlesInit}
-          // loaded={particlesLoaded}
           options={options}
-          // options={{
-          //   // background: {
-          //   //     color: {
-          //   //         value: "#0d47a1",
-          //   //     },
-          //   // },
-          //   zIndex: -99,
-          //   fpsLimit: 120,
-          //   interactivity: {
-          //     events: {
-          //       onClick: {
-          //         enable: true,
-          //         mode: "push",
-          //       },
-          //       onHover: {
-          //         enable: true,
-          //         mode: "repulse",
-          //       },
-          //       resize: true,
-          //     },
-          //     modes: {
-          //       push: {
-          //         quantity: 4,
-          //       },
-          //       repulse: {
-          //         distance: 200,
-          //         duration: 0.4,
-          //       },
-          //     },
-          //   },
-          //   particles: {
-          //     color: {
-          //       value: color,
-          //     },
-          //     links: {
-          //       color: color,
-          //       distance: 150,
-          //       enable: true,
-          //       opacity: 0.5,
-          //       width: 1,
-          //     },
-          //     move: {
-          //       direction: "none",
-          //       enable: true,
-          //       outModes: {
-          //         default: "bounce",
-          //       },
-          //       random: false,
-          //       speed: 2,
-          //       straight: false,
-          //     },
-          //     number: {
-          //       density: {
-          //         enable: true,
-          //         area: 800,
-          //       },
-          //       value: 80,
-          //     },
-          //     opacity: {
-          //       value: 0.5,
-          //     },
-          //     shape: {
-          //       type: "circle",
-          //     },
-          //     size: {
-          //       value: { min: 1, max: 5 },
-          //     },
-          //   },
-          //   polygon: { 
-          //       enable: true,
-          //       url: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg",
-          //   },
-          //   detectRetina: true,
-          // }}
         />
     )
 }
